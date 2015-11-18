@@ -5,7 +5,7 @@
 Summary: NAnt is a build tool for Mono and .NET
 Name: nant
 Version: 0.92
-Release: 51%{?dist}
+Release: 53%{?dist}
 Epoch: 1
 License: GPLv2+
 Group: Development/Tools
@@ -20,7 +20,6 @@ Patch5: nant-0.92-system_log4net.patch
 Patch6: nant-0.92-no_netdumbster.patch
 Patch7: nant-fixmono42_scripttask.patch
 
-Requires: mono(log4net) >= 1.2.14
 BuildRequires: mono-devel
 BuildRequires: nunit-devel >= 2.6.4
 %if 0%{bootstrap}
@@ -159,7 +158,7 @@ test "%{_libdir}" = "%{_prefix}/lib" || mv $RPM_BUILD_ROOT/%{_prefix}/lib/pkgcon
 %{_libdir}/pkgconfig/nant.pc
 
 %changelog
-* Wed Nov 18 2015 Timotheus Pokorra <timotheus.pokorra@solidcharity.com> 1:0.92-51
+* Wed Nov 18 2015 Timotheus Pokorra <timotheus.pokorra@solidcharity.com> 1:0.92-53
 - fix for Mono 4.2 for compiling ScriptTasks (see https://github.com/openpetra/openpetra/issues/109)
 
 * Thu Jul 16 2015 Timotheus Pokorra <timotheus.pokorra@solidcharity.com> 1:0.92-4
