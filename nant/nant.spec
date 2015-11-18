@@ -5,7 +5,7 @@
 Summary: NAnt is a build tool for Mono and .NET
 Name: nant
 Version: 0.92
-Release: 5%{?dist}
+Release: 4%{?dist}
 Epoch: 1
 License: GPLv2+
 Group: Development/Tools
@@ -19,6 +19,7 @@ Patch4: nant-0.90-system_sharpziplib.patch
 Patch5: nant-0.92-system_log4net.patch
 Patch6: nant-0.92-no_netdumbster.patch
 
+Requires: mono(log4net) >= 1.2.14
 BuildRequires: mono-devel
 BuildRequires: nunit-devel >= 2.6.4
 %if 0%{bootstrap}
@@ -155,9 +156,6 @@ test "%{_libdir}" = "%{_prefix}/lib" || mv $RPM_BUILD_ROOT/%{_prefix}/lib/pkgcon
 %{_libdir}/pkgconfig/nant.pc
 
 %changelog
-* Sat Nov 14 2015 Timotheus Pokorra <timotheus.pokorra@solidcharity.com> 1:0.92-5
-- force a rebuild so that nant requires the updated log4net (fixes bug #1281954)
-
 * Thu Jul 16 2015 Timotheus Pokorra <timotheus.pokorra@solidcharity.com> 1:0.92-4
 - fix post bootstrap build, require nunit-devel >= 2.6.4 (fixes bug #1239705)
 - also fix problems with missing NDoc and netDumbster dlls
