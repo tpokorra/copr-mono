@@ -1,5 +1,11 @@
 %global debug_package %{nil}
 
+%if 0%{?rhel}%{?el6}%{?el7}
+# see https://fedorahosted.org/fpc/ticket/395
+%define _monodir %{_prefix}/lib/mono
+%define _monogacdir %{_monodir}/gac
+%endif
+
 Name:           nunit
 Version:        2.6.4
 Release:        11%{?dist}
